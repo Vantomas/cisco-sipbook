@@ -6,9 +6,9 @@
 //Get data from table
     $sql = "SELECT * FROM records ORDER BY name";
 
-    $result = mysql_query($sql);
+    $result = $mysqli->query($sql);
     if (!$result) {
-        die('Invalid query: ' . mysql_error());
+        die('Invalid query: ' . $mysqli->error());
     }
 
 //Start building XML file
@@ -18,7 +18,7 @@
     $xml .= "<Title>$title</Title>\n";
     $xml .= "<Prompt>Select</Prompt>\n";
 
-while ($row = mysql_fetch_array($result))
+while ($row = $result->fetch_array())
     {
         $xml .= "<DirectoryEntry>\n";
         $xml .= "<Name>";

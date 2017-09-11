@@ -8,7 +8,7 @@ if(!empty($_POST))
     $name = $_POST['name'];
     $number = $_POST['number'];
 
-    $result = mysql_query("INSERT INTO records (name, number) VALUES ('$name', '$number')");
+    $result = $mysqli->query("INSERT INTO records (name, number) VALUES ('$name', '$number')");
     if($result !== false) {
         echo '<META HTTP-EQUIV="Refresh" Content="0; URL=index.php">';
     }

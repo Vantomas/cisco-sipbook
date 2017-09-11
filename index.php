@@ -78,8 +78,8 @@
                 // Get data from DB
                 $query = "SELECT * FROM records ORDER BY 'name'";
 
-                $result = mysql_query($query)
-                or die(mysql_error());?>
+                $result = $mysqli->query($query)
+                or die($mysqli->error());?>
                 <thead>
                 <tr>
                     <td width="260"><b>Name</b></td>
@@ -87,7 +87,7 @@
                     <td width="30"></td>
                 </tr>
                 </thead>
-                <?php while($row = mysql_fetch_array($result)) : ?>
+                <?php while($row = $result->fetch_array()) : ?>
                 <tr>
                            <td id="name:<?php echo $row['records_id']; ?>" contenteditable="true"><?php echo $row['name']; ?></td>
                            <td id="number:<?php echo $row['records_id']; ?>" contenteditable="true"><?php echo $row['number']; ?></td>

@@ -7,7 +7,7 @@ if(!empty($_POST))
     {
 //Clean post values
     $field_userid = strip_tags(trim($field_name));
-    $val = strip_tags(trim(mysql_real_escape_string($val)));
+    $val = strip_tags(trim($mysqli->real_escape_string($val)));
 
 //From the fieldname:user_id we need to get user_id
     $split_data = explode(':', $field_userid);
@@ -16,7 +16,7 @@ if(!empty($_POST))
     if(!empty($user_id) && !empty($field_name) && !empty($val))
     {
 //Update the values
-    mysql_query("UPDATE records SET $field_name = '$val' WHERE records_id = $user_id") or mysql_error();
+    $mysqli->query("UPDATE records SET $field_name = '$val' WHERE records_id = $user_id") or $mysqli->error();
         echo "Updated";
     } else {
         echo "Invalid Requests";
