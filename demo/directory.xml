@@ -1,0 +1,16 @@
+<CiscoIPPhoneDirectory>
+	<Title>Business</Title>
+	<Prompt>Select</Prompt>
+	<DirectoryEntry>
+		<Name>Druhe jmeno</Name>
+		<Telephone>112</Telephone>
+	</DirectoryEntry>
+	<DirectoryEntry>
+		<Name>Prvni jmeno</Name>
+		<Telephone>111</Telephone>
+	</DirectoryEntry>
+	<DirectoryEntry>
+		<Name>Treti jmeno</Name>
+		<Telephone>123</Telephone>
+	</DirectoryEntry>
+</CiscoIPPhoneDirectory>
